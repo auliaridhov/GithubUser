@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary"
+        android:id="@+id/bg">
+
+    </LinearLayout>
+
+    <com.arlib.floatingsearchview.FloatingSearchView
+        android:id="@+id/floating_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:floatingSearch_searchBarMarginLeft="10dp"
+        app:floatingSearch_searchBarMarginTop="10dp"
+        app:floatingSearch_searchBarMarginRight="10dp"
+        app:floatingSearch_searchHint="Search Github user"
+        app:floatingSearch_suggestionsListAnimDuration="250"
+        app:floatingSearch_showSearchKey="true"
+        app:floatingSearch_leftActionMode="showSearch"
+        app:floatingSearch_close_search_on_keyboard_dismiss="true"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rvUsers"
+        tools:listitem="@layout/layout_users">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/doesntExist"
+        android:gravity="center"
+        android:id="@+id/hasilTV"
+        android:layout_marginTop="20dp"/>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/progressbar"/>
+
+</RelativeLayout>
